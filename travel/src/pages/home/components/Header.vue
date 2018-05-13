@@ -34,9 +34,11 @@
       height .64rem
       margin-top .12rem
       margin-left .2rem
+      padding-left .2rem
       color #cccccc
       line-height .64rem
-      padding-left .2rem
+      .iconfont 
+        margin-right .2rem
     .header-right 
       width 1.24rem
       float right 
