@@ -2,7 +2,7 @@
   <div>
     <div class="title">热销推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="item in RecommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item in list" :key="item.id">
         <img class="item-img" :src="item.imgUrl" alt="">
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -17,28 +17,11 @@
 <script>
   export default {
     name: 'HomeRecommend',
+    props: {
+      list: Array
+    },
     data() {
-      return {
-        RecommendList: [{
-            id: '0001',
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/1709/28/288fbeccc335f774a3.img.jpg_200x200_4a81bde9.jpg',
-            title: '杭州必游TOP10',
-            desc: '杭州必游TOP10杭州必游TOP10杭州必游TOP10杭州必游TOP10杭州必游TOP10'
-          },
-          {
-            id: '0002',
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/1709/28/288fbeccc335f774a3.img.jpg_200x200_4a81bde9.jpg',
-            title: '杭州必游TOP10',
-            desc: '杭州必游TOP10杭州必游TOP10杭州必游TOP10杭州必游TOP10杭州必游TOP10'
-          },
-          {
-            id: '0003',
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/1709/28/288fbeccc335f774a3.img.jpg_200x200_4a81bde9.jpg',
-            title: '杭州必游TOP10',
-            desc: '杭州必游TOP10杭州必游TOP10杭州必游TOP10杭州必游TOP10杭州必游TOP10'
-          }
-        ]
-      }
+      return {}
     }
   }
 </script>
