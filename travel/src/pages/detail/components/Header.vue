@@ -14,13 +14,14 @@
       return {
         showAbs: true,
         opacityStyle: {
-          opacity: 0
+          opacity: 1
         }
       }
     },
     methods: {
       handleScroll() {
         const top = document.documentElement.scrollTop
+        console.log(top)
         if (top > 60) {
           const opacityNum = top / 140
           //console.log(opacityNum)
@@ -69,7 +70,7 @@
     color #fff
     background-color $bgColor
     font-size .32rem
-    z-index 99
+    z-index 1000
     .back-icon
       position absolute
       width .64rem

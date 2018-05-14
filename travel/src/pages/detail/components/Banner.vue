@@ -1,27 +1,33 @@
 <template>
   <div>
     <div class="banner" @click="handleBannerClick">
-      <img class="banner-img" src="http://img1.qunarzz.com/sight/p0/1805/b2/b2039a43a73adf9ea3.water.jpg_350x240_9e716a83.jpg" alt="">
+      <img class="banner-img" :src="bannerImg" alt="">
       <div class="banner-info">
         <div class="banner-title">
-          周庄(AAAAA景区)
+          {{this.sightName}}
         </div>
         <div class="banner-number">
-          <span class="iconfont banner-icon">&#xe632;</span>39
+          <span class="iconfont banner-icon">&#xe632;</span>{{this.bannerImgs.length}}
         </div>
       </div>
     </div>
-    <common-gallary :imgs="imgs" v-show="showGallary" @close="handleGallaryClose"></common-gallary>
+    <fade><common-gallary :imgs="bannerImgs" v-show="showGallary" @close="handleGallaryClose"></common-gallary></fade>
   </div>
 </template>
 
 <script>
   import commonGallary from 'common/gallary/Gallary'
+  import Fade from 'common/fade/Fade'
   export default {
     name: 'DetailBanner',
+    props: {
+      sightName: String,
+      bannerImg: String,
+      bannerImgs: Array
+    },
     data() {
       return {
-        imgs: ['http://img1.qunarzz.com/sight/p0/201403/07/552f3468861a6052c0b6ba77d255e558.jpg_r_800x800_7949fb53.jpg', 'http://img1.qunarzz.com/sight/p0/1502/b0/b0a7120b77c5a6ad.water.jpg_350x240_81beb7bf.jpg'],
+        //imgs: ['http://img1.qunarzz.com/sight/p0/201403/07/552f3468861a6052c0b6ba77d255e558.jpg_r_800x800_7949fb53.jpg', 'http://img1.qunarzz.com/sight/p0/1502/b0/b0a7120b77c5a6ad.water.jpg_350x240_81beb7bf.jpg'],
         showGallary: false
       }
     },
@@ -34,7 +40,8 @@
       }
     },
     components: {
-      commonGallary
+      commonGallary,
+      Fade
     },
   }
 </script>
