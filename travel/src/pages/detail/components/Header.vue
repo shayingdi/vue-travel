@@ -23,7 +23,7 @@
         const top = document.documentElement.scrollTop
         if (top > 60) {
           const opacityNum = top / 140
-          console.log(opacityNum)
+          //console.log(opacityNum)
           //opacity = opacity > 1 ? 1 : opacity
           this.opacityStyle = {
             opacity: opacityNum
@@ -69,6 +69,7 @@
     color #fff
     background-color $bgColor
     font-size .32rem
+    z-index 99
     .back-icon
       position absolute
       width .64rem
