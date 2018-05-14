@@ -5,9 +5,6 @@ import mutations from './mutations'
 
 Vue.use(Vuex)
 
-let defaultCity = '上海'
-
-
 export default new Vuex.Store({
   state,
   actions: {
