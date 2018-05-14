@@ -17,45 +17,11 @@
           </div>
         </div>
       </div>
-      <div class="area" v-for="(item,key) in cities" :key="key">
+      <div class="area" v-for="(item,key) in cities" :key="key" :ref="key">
         <div class="title border-topbottom">{{key}}</div>
         <div class="item-list">
           <div class="item border-bottom" v-for="innerItem in item" :key="innerItem.id">
             {{innerItem.name}}
-          </div>
-        </div>
-      </div>
-      <div class="area">
-        <div class="title border-topbottom">A</div>
-        <div class="item-list">
-          <div class="item border-bottom">
-            阿拉尔
-          </div>
-          <div class="item border-bottom">
-            阿拉尔
-          </div>
-          <div class="item border-bottom">
-            阿拉尔
-          </div>
-          <div class="item border-bottom">
-            阿拉尔
-          </div>
-        </div>
-      </div>
-      <div class="area">
-        <div class="title border-topbottom">A</div>
-        <div class="item-list">
-          <div class="item border-bottom">
-            阿拉尔
-          </div>
-          <div class="item border-bottom">
-            阿拉尔
-          </div>
-          <div class="item border-bottom">
-            阿拉尔
-          </div>
-          <div class="item border-bottom">
-            阿拉尔
           </div>
         </div>
       </div>
@@ -69,10 +35,19 @@
     name: 'CityList',
     props: {
       cities: Object,
-      hot: Array
+      hot: Array,
+      letter: String
     },
     mounted() {
       this.scroll = new Bscroll(this.$refs.wrapper)
+    },
+    watch: {
+      letter(){
+       if(this.letter){
+         const element = this.$refs[this.letter][0]
+         this.scroll.scrollToElement(element)
+       }
+      }
     }
   }
 </script>
